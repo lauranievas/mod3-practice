@@ -14,3 +14,22 @@ Ejemplo: "Hello world"
 }
 Nota: siempre letras minúsculas y sin tildes (para simplificar)
 */
+
+function countKeys(data) {
+    const result = {};
+    data = data.toLowerCase();
+  
+    for (var i = 0; i < data.length; i++) {
+      const key = data[i];
+      if (key.match(/[a-z]/)) {
+        if (result[key]) {
+          result[key]++;
+        } else {
+          result[key] = 1;
+        }
+      }
+    }
+  
+    return result;
+  }
+  showContent(19, countKeys("Hello world"));
